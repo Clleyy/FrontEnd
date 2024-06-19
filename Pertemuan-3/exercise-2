@@ -1,0 +1,33 @@
+// Modifikasi Exercise1
+// function hitungBmi(berat,tinggi) {
+//     let bmi = berat / (tinggi * tinggi);
+//     return bmi;
+
+// }
+
+// let berat = 53
+// let tinggi = 1.70
+
+// let bmi = hitungBmi (berat,tinggi)
+
+
+
+function hitungBmi(berat, tinggi, callback) {
+   let bmi = berat / (tinggi * tinggi);
+   let classification;
+  
+    if (bmi < 18.5) {
+      classification = 'underwight'
+    } else if (bmi >= 18.5 && bmi < 24.9) {
+      classification = 'normal range'
+    } else if (bmi >= 25 && bmi < 29.9) {
+      classification = 'pre obese'
+    } else {
+      classification = 'obese'
+    }
+    callback(classification);
+
+}
+hitungBmi(53, 1.77, function(classification) {
+    console.log("BMI:", classification);
+});
